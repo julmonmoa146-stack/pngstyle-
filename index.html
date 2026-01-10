@@ -2,85 +2,77 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PNGStyle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body {
-  margin: 0;
+  margin:0;
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background:#f2f2f2;
 }
 
 header {
-  background: #0a5cff;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
+  background:#0a5cff;
+  color:white;
+  padding:14px;
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
 }
 
 nav {
-  display: flex;
-  background: #ffffff;
-  border-bottom: 1px solid #ccc;
+  display:flex;
+  background:white;
+  border-bottom:1px solid #ccc;
 }
 
 nav button {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  background: none;
-  font-size: 16px;
-  cursor: pointer;
+  flex:1;
+  padding:10px;
+  border:none;
+  background:none;
+  font-size:14px;
 }
 
 nav button:hover {
-  background: #eee;
+  background:#eee;
 }
 
 section {
-  display: none;
-  padding: 15px;
+  display:none;
+  padding:15px;
 }
 
 section.active {
-  display: block;
+  display:block;
 }
 
 .card {
-  background: white;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 8px;
+  background:white;
+  padding:15px;
+  margin-bottom:12px;
+  border-radius:8px;
 }
 
 .actions {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+  display:flex;
+  justify-content:space-around;
+  margin-top:10px;
 }
 
 .actions button {
-  border: none;
-  background: #eee;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  border:none;
+  background:#eee;
+  padding:8px 12px;
+  border-radius:6px;
 }
 
-.footer {
-  text-align: center;
-  font-size: 14px;
-  color: #777;
-  padding: 15px;
+footer {
+  text-align:center;
+  font-size:12px;
+  color:#777;
+  padding:20px;
 }
 </style>
 </head>
@@ -97,12 +89,10 @@ section.active {
 <button onclick="showPage('about')">About</button>
 </nav>
 
-<!-- HOME -->
 <section id="home" class="active">
   <div class="card">
-    <img src="https://via.placeholder.com/400x200.png?text=PNG+Style">
     <h3>Welcome to PNGStyle</h3>
-    <p>Your independent PNG app for posts, videos, and market.</p>
+    <p>Your independent PNG app for posts, videos and market.</p>
     <div class="actions">
       <button>👍 Like</button>
       <button>💬 Comment</button>
@@ -112,64 +102,49 @@ section.active {
   </div>
 </section>
 
-<!-- VIDEOS -->
 <section id="videos">
   <div class="card">
-    <h3>Featured Video</h3>
+    <h3>Videos</h3>
     <video width="100%" controls>
       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
     </video>
-    <div class="actions">
-      <button>👍 Like</button>
-      <button>💬 Comment</button>
-      <button>🔁 Share</button>
-      <button>⭐ Save</button>
-    </div>
   </div>
 </section>
 
-<!-- MARKET -->
 <section id="market">
   <div class="card">
-    <h3>PNG T-Shirt</h3>
-    <p>Price: K50</p>
-    <button>🛒 Buy</button>
-  </div>
-  <div class="card">
-    <h3>Handmade Bilum</h3>
-    <p>Price: K120</p>
-    <button>🛒 Buy</button>
+    <h3>PNG Market</h3>
+    <p>Traditional bag – K120</p>
+    <p>PNG T-Shirt – K50</p>
   </div>
 </section>
 
-<!-- PROFILE -->
 <section id="profile">
   <div class="card">
     <h3>User Profile</h3>
-    <p>Username: Guest</p>
-    <button>🔐 Login</button>
-    <button>📝 Register</button>
+    <p>Login & signup coming soon.</p>
+    <button>Create Account</button>
+    <button>Login</button>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="card">
     <h3>About PNGStyle</h3>
-    <p>PNGStyle is a locally inspired app built for PNG users and beyond.</p>
+    <p>Created in PNG, for PNG users.</p>
   </div>
 </section>
 
-<div class="footer">
-  © 2026 PNGStyle. All rights reserved.
-</div>
+<footer>
+© 2026 PNGStyle. All rights reserved.
+</footer>
 
 <script>
-function showPage(id) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+function showPage(id){
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 }
 </script>
 
 </body>
-</html>
+  </html>
