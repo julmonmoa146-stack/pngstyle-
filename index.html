@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>PNGStyle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      text-align: center;
-    }
-    header {
-      background: #0a5cff;
-      color: white;
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .card {
-      background: white;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 10px;
-    }
+<nav style="display:flex;background:#fff;border-bottom:1px solid #ddd">
+  <a href="#home" class="menu">Home</a>
+  <a href="#videos" class="menu">Videos</a>
+  <a href="#market" class="menu">Market</a>
+  <a href="#jobs" class="menu">Jobs</a>
+  <a href="#about" class="menu">About</a>
+</nav>
+
+<style>
+.menu{
+  flex:1;
+  text-align:center;
+  padding:12px;
+  text-decoration:none;
+  color:#000;
+  font-weight:bold;
+}
+.menu:hover{background:#eee;}
+section{display:none;padding:15px;}
+section:target{display:block;}
+#home{display:block;}
   </style>
-</head>
-<body>
-
-<header>PNGStyle App</header>
-
-<div class="card">
-  <h3>Welcome to PNGStyle</h3>
-  <p>Your independent PNG app is now live.</p>
-</div>
-
-<div class="card">
-  <p>More features coming soon.</p>
-</div>
-
-</body>
-    </html>
