@@ -44,3 +44,52 @@ section:target{display:block;}
   <h2>About PNGStyle</h2>
   <p>Made in PNG, for PNG.</p>
     </section>
+<img src="https://via.placeholder.com/400x200.png?text=PNGStyle+Banner"
+     style="width:100%;border-radius:10px;margin-bottom:15px;"><div class="card">
+  <h3>PNG Fashion</h3>
+  <p>Traditional & modern PNG clothing.</p>
+     </div>.card{
+  background:#fff;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}https://www.w3schools.com/html/mov_bbb.mp4<ul>
+  <li>📌 Job: Delivery Driver</li>
+  <li>📌 Job: Graphic Designer</li>
+  <li>📌 Job: Market Seller</li>
+    </ul><section id="home">
+  <img src="https://via.placeholder.com/400x200.png?text=PNGStyle"
+       style="width:100%;border-radius:10px;margin-bottom:15px;">
+
+  <div class="card">
+    <h2>Welcome to PNGStyle</h2>
+    <p>PNG’s independent social & marketplace app.</p>
+  </div>
+
+  <div class="card">
+    <h3>Latest Updates</h3>
+    <ul>
+      <li>🔥 New PNG products</li>
+      <li>🎥 Local videos</li>
+      <li>💼 Job listings</li>
+    </ul>
+  </div>
+      </section><section id="login">
+  <div class="card">
+    <h2>Login</h2>
+    <input id="user" placeholder="Username" style="width:100%;padding:10px"><br><br>
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+  </div>
+</section>
+
+<script>
+function login(){
+  let u=document.getElementById("user").value;
+  if(u){
+    localStorage.setItem("pngUser",u);
+    document.getElementById("msg").innerText="Welcome "+u;
+  }
+}
+           </script>
