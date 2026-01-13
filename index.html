@@ -1,148 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>PNGStyle</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f2f2f2;
-}
-
-header {
-  background:#0a5cff;
-  color:white;
-  padding:14px;
-  text-align:center;
-  font-size:20px;
-  font-weight:bold;
-}
-
-nav {
-  display:flex;
-  background:white;
-  border-bottom:1px solid #ccc;
-}
-
-nav button {
-  flex:1;
-  padding:10px;
-  border:none;
-  background:none;
-  font-size:14px;
-}
-
-nav button:hover {
-  background:#eee;
-}
-
-section {
-  display:none;
-  padding:15px;
-}
-
-section.active {
-  display:block;
-}
-
-.card {
-  background:white;
-  padding:15px;
-  margin-bottom:12px;
-  border-radius:8px;
-}
-
-.actions {
-  display:flex;
-  justify-content:space-around;
-  margin-top:10px;
-}
-
-.actions button {
-  border:none;
-  background:#eee;
-  padding:8px 12px;
-  border-radius:6px;
-}
-
-footer {
-  text-align:center;
-  font-size:12px;
-  color:#777;
-  padding:20px;
-}
+body{margin:0;font-family:Arial;background:#f2f2f2}
+header{background:#0a5cff;color:white;padding:15px;text-align:center;font-size:22px}
+nav{display:flex;background:white;border-bottom:1px solid #ddd}
+nav button{flex:1;padding:12px;border:none;background:none;font-size:16px}
+section{display:none;padding:15px}
+section.active{display:block}
+.card{background:white;padding:15px;margin-bottom:12px;border-radius:8px}
 </style>
 </head>
-
 <body>
 
 <header>PNGStyle</header>
 
 <nav>
-<button onclick="showPage('home')">Home</button>
-<button onclick="showPage('videos')">Videos</button>
-<button onclick="showPage('market')">Market</button>
-<button onclick="showPage('profile')">Profile</button>
-<button onclick="showPage('about')">About</button>
+<button onclick="show('home')">Home</button>
+<button onclick="show('videos')">Videos</button>
+<button onclick="show('market')">Market</button>
+<button onclick="show('jobs')">Jobs</button>
+<button onclick="show('about')">About</button>
 </nav>
 
 <section id="home" class="active">
-  <div class="card">
-    <h3>Welcome to PNGStyle</h3>
-    <p>Your independent PNG app for posts, videos and market.</p>
-    <div class="actions">
-      <button>👍 Like</button>
-      <button>💬 Comment</button>
-      <button>🔁 Share</button>
-      <button>⭐ Save</button>
-    </div>
-  </div>
+<div class="card">
+<h3>Welcome to PNGStyle</h3>
+<p>Your independent PNG app.</p>
+</div>
 </section>
 
 <section id="videos">
-  <div class="card">
-    <h3>Videos</h3>
-    <video width="100%" controls>
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    </video>
-  </div>
+<div class="card">
+<h3>Videos</h3>
+<p>PNG content coming soon</p>
+</div>
 </section>
 
 <section id="market">
-  <div class="card">
-    <h3>PNG Market</h3>
-    <p>Traditional bag – K120</p>
-    <p>PNG T-Shirt – K50</p>
-  </div>
+<div class="card">
+<h3>Market</h3>
+<p>Buy & sell locally</p>
+</div>
 </section>
 
-<section id="profile">
-  <div class="card">
-    <h3>User Profile</h3>
-    <p>Login & signup coming soon.</p>
-    <button>Create Account</button>
-    <button>Login</button>
-  </div>
+<section id="jobs">
+<div class="card">
+<h3>Jobs</h3>
+<p>Find PNG opportunities</p>
+</div>
 </section>
 
 <section id="about">
-  <div class="card">
-    <h3>About PNGStyle</h3>
-    <p>Created in PNG, for PNG users.</p>
-  </div>
+<div class="card">
+<h3>About</h3>
+<p>PNGStyle – built for PNG.</p>
+</div>
 </section>
 
-<footer>
-© 2026 PNGStyle. All rights reserved.
-</footer>
-
 <script>
-function showPage(id){
-  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
+function show(id){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 </script>
 
