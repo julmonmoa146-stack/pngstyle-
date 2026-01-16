@@ -1,72 +1,95 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>PNGStyle</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{margin:0;font-family:Arial;background:#f2f2f2}
-header{background:#0a5cff;color:white;padding:15px;text-align:center;font-size:22px}
-nav{display:flex;background:white;border-bottom:1px solid #ddd}
-nav button{flex:1;padding:12px;border:none;background:none;font-size:16px}
-section{display:none;padding:15px}
-section.active{display:block}
-.card{background:white;padding:15px;margin-bottom:12px;border-radius:8px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PNGStyle</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f2f2f2; }
+    header { background:#1877f2; color:#fff; padding:12px; text-align:center; font-size:20px; font-weight:bold; }
+    nav { display:flex; justify-content:space-around; background:#fff; border-bottom:1px solid #ddd; }
+    nav button { flex:1; padding:10px; border:none; background:none; font-weight:bold; }
+    nav button.active { color:#1877f2; border-bottom:2px solid #1877f2; }
+    section { display:none; padding:10px; }
+    section.active { display:block; }
+    .card { background:#fff; padding:10px; margin-bottom:10px; border-radius:8px; }
+    .actions { display:flex; justify-content:space-around; margin-top:8px; }
+    .actions button { border:none; background:#eee; padding:6px 10px; border-radius:6px; }
+    input, textarea { width:100%; padding:8px; margin:5px 0; }
+    .btn { background:#1877f2; color:#fff; padding:8px; border:none; width:100%; border-radius:6px; }
+    footer { text-align:center; font-size:12px; color:#666; margin:20px 0; }
+  </style>
 </head>
-<body>
+<body><header>PNGStyle</header><nav>
+  <button class="active" onclick="showTab('home')">Home</button>
+  <button onclick="showTab('videos')">Videos</button>
+  <button onclick="showTab('market')">Market</button>
+  <button onclick="showTab('profile')">Profile</button>
+  <button onclick="showTab('about')">About</button>
+</nav><section id="home" class="active">
+  <div class="card">
+    <h3>Welcome to PNGStyle</h3>
+    <p>Your independent PNG app for posts, videos and market.</p>
+  </div>  <div class="card">
+    <textarea id="postText" placeholder="What's on your mind?"></textarea>
+    <button class="btn" onclick="addPost()">Post</button>
+  </div>  <div id="feed"></div>
+</section><section id="videos">
+  <div class="card">
+    <h3>Videos</h3>
+    <video controls width="100%">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+  </div>
+</section><section id="market">
+  <div class="card">
+    <h3>Marketplace</h3>
+    <p>Sell and buy items (coming soon)</p>
+    <button class="btn">Post Item</button>
+  </div>
+</section><section id="profile">
+  <div class="card">
+    <h3>User Profile</h3>
+    <input id="username" placeholder="Enter username" />
+    <button class="btn" onclick="saveUser()">Login / Save</button>
+    <p id="userDisplay"></p>
+  </div>
+</section><section id="about">
+  <div class="card">
+    <h3>About PNGStyle</h3>
+    <p>PNGStyle is a local social platform built for Papua New Guinea.</p>
+    <p>More features coming soon.</p>
+  </div>
+</section><footer>© 2026 PNGStyle. All rights reserved.</footer><script>
+  function showTab(tab) {
+    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById(tab).classList.add('active');
+  }
 
-<header>PNGStyle</header>
+  function addPost() {
+    let text = document.getElementById('postText').value;
+    if(!text) return;
+    let post = document.createElement('div');
+    post.className = 'card';
+    post.innerHTML = `<p>${text}</p>
+      <div class="actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+        <button>⭐ Save</button>
+      </div>`;
+    document.getElementById('feed').prepend(post);
+    document.getElementById('postText').value='';
+  }
 
-<nav>
-<button onclick="show('home')">Home</button>
-<button onclick="show('videos')">Videos</button>
-<button onclick="show('market')">Market</button>
-<button onclick="show('jobs')">Jobs</button>
-<button onclick="show('about')">About</button>
-</nav>
+  function saveUser() {
+    let u = document.getElementById('username').value;
+    localStorage.setItem('pngstyle_user', u);
+    document.getElementById('userDisplay').innerText = 'Logged in as: ' + u;
+  }
 
-<section id="home" class="active">
-<div class="card">
-<h3>Welcome to PNGStyle</h3>
-<p>Your independent PNG app.</p>
-</div>
-</section>
-
-<section id="videos">
-<div class="card">
-<h3>Videos</h3>
-<p>PNG content coming soon</p>
-</div>
-</section>
-
-<section id="market">
-<div class="card">
-<h3>Market</h3>
-<p>Buy & sell locally</p>
-</div>
-</section>
-
-<section id="jobs">
-<div class="card">
-<h3>Jobs</h3>
-<p>Find PNG opportunities</p>
-</div>
-</section>
-
-<section id="about">
-<div class="card">
-<h3>About</h3>
-<p>PNGStyle – built for PNG.</p>
-</div>
-</section>
-
-<script>
-function show(id){
-document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-</script>
-
-</body>
-</html>
+  let saved = localStorage.getItem('pngstyle_user');
+  if(saved) document.getElementById('userDisplay').innerText = 'Logged in as: ' + saved;
+</script></body>
+  </html>
